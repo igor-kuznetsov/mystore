@@ -11,6 +11,7 @@
                 <class>Mycompany_Helloworld_Model</class>
                 <resourceModel>mycompanyhelloworld_resource</resourceModel>
             </mycompanyhelloworld>
+
             <mycompanyhelloworld_resource>
                 <class>Mycompany_Helloworld_Model_Resource</class>
                 <entities>

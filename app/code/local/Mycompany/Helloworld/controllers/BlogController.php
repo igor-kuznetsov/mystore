@@ -19,23 +19,28 @@ class Mycompany_Helloworld_BlogController extends Mage_Core_Controller_Front_Act
         $id = (int) $this->getRequest()->getParam('id');
         $blogpost->load($id);
 
+//        var_dump($blogpost->getData());
+
         echo $blogpost->getData()['title'] . '<br>';
         echo $blogpost->getData('title') . '<br>';
+
         $blogpost->setData('title', 'New Title Set');
         echo $blogpost->getData('title') . '<br>';
+
         echo $blogpost->getOrigData('title') . '<br>';
 
+        // __call()
         $title = $blogpost->getTitle();
         echo $title . '<br>';
         $blogpost->setTitle($title . '-' . time());
         echo $blogpost->getTitle() . '<br>';
-
         var_dump($blogpost->hasTitle());
         echo '<br>';
         $blogpost->unsTitle(); // unset
         var_dump($blogpost->hasTitle());
-
     }
+
+    // CRUD
 
     public function readAction()
     {
@@ -56,7 +61,8 @@ class Mycompany_Helloworld_BlogController extends Mage_Core_Controller_Front_Act
         $blogpost->setPost('This post was created automatically');
         $blogpost->save();
 
-        echo "new post created";
+        $id = $blogpost->getBlogpostId();
+        echo "new post #$id created";
     }
 
     public function updateAction()
@@ -65,6 +71,7 @@ class Mycompany_Helloworld_BlogController extends Mage_Core_Controller_Front_Act
 
         $id = (int) $this->getRequest()->getParam('id');
         $blogpost->load($id);
+
         $blogpost->setTitle("The First post!");
         $blogpost->save();
 
@@ -77,6 +84,7 @@ class Mycompany_Helloworld_BlogController extends Mage_Core_Controller_Front_Act
 
         $id = (int) $this->getRequest()->getParam('id');
         $blogpost->load($id);
+
         $blogpost->delete();
 
         echo "post #$id deleted";
@@ -84,7 +92,7 @@ class Mycompany_Helloworld_BlogController extends Mage_Core_Controller_Front_Act
 
     public function listAction()
     {
-        $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
+        $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();// object
 
         foreach ($posts as $blogpost) {
             echo '<h3>'.$blogpost->getTitle().'</h3>';
