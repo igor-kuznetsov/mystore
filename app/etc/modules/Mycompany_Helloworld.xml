@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mycompany_Helloworld>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mycompany_Helloworld>
+    </modules>
+</config>

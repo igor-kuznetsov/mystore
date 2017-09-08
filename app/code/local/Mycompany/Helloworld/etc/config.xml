@@ -1,0 +1,37 @@
+<config>
+    <modules>
+        <Mycompany_Helloworld>
+            <version>0.1.0</version>
+        </Mycompany_Helloworld>
+    </modules>
+
+    <global>
+        <models>
+            <mycompanyhelloworld>
+                <class>Mycompany_Helloworld_Model</class>
+                <resourceModel>mycompanyhelloworld_resource</resourceModel>
+            </mycompanyhelloworld>
+
+            <mycompanyhelloworld_resource>
+                <class>Mycompany_Helloworld_Model_Resource</class>
+                <entities>
+                    <blogpost>
+                        <table>blog_posts</table>
+                    </blogpost>
+                </entities>
+            </mycompanyhelloworld_resource>
+        </models>
+    </global>
+
+    <frontend>
+        <routers>
+            <helloworld>
+                <use>standard</use>
+                <args>
+                    <module>Mycompany_Helloworld</module>
+                    <frontName>helloworld</frontName>
+                </args>
+            </helloworld>
+        </routers>
+    </frontend>
+</config>
