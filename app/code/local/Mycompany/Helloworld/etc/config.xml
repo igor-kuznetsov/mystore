@@ -21,6 +21,15 @@
                 </entities>
             </mycompanyhelloworld_resource>
         </models>
+
+        <resources>
+            <mycompanyhelloworld_setup>
+                <setup>
+                    <module>Mycompany_Helloworld</module>
+                    <class>Mycompany_Helloworld_Model_Resource_Setup</class>
+                </setup>
+            </mycompanyhelloworld_setup>
+        </resources>
     </global>
 
     <frontend>
