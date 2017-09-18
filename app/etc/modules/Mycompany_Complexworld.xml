@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mycompany_Complexworld>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mycompany_Complexworld>
+    </modules>
+</config>
