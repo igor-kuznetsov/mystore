@@ -247,9 +247,3 @@
         Deny from all
 
     </Files>
-
-############################################
-
-<IfModule mod_env.c>
-    SetEnv MAGE_IS_DEVELOPER_MODE 1
-</IfModule>

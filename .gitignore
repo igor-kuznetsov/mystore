@@ -1,6 +1,8 @@
 .idea
 .DS_Store
 .phpstorm.meta.php
+/PATCH_*.sh
+/0
 
 /app/etc/local.xml
 

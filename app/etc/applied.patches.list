@@ -1,0 +1,5 @@
+-e 2017-09-19 14:07:34 UTC | SUPEE-10336 | CE_1.9.3.4 | v1 | f1d7bc3b31d0aad9c851142d1cb66abc14dc51a3 | Fri Sep 8 17:48:10 2017 +0300 | 18b58f6..f1d7bc3
+patching file app/code/core/Mage/Usa/Model/Shipping/Carrier/Usps.php
+patching file app/locale/en_US/Mage_Usa.csv
+
+
