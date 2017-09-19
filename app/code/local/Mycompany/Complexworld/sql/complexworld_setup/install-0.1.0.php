@@ -13,17 +13,18 @@ $installer->createEntityTables(
 );
 
 $installer->addAttribute('complexworld_company', 'name', [
-    'type' => 'varchar', //the EAV attribute type (table `companies_varchar`)
-    'label' => 'Name',
-    'input' => 'text',
-    'class' => '',
-    'backend' => '',
-    'frontend' => '',
-    'source' => '',
+    'type' => 'varchar', // the EAV attribute type (e.g. table `companies_varchar`)
+    'label' => 'Name', // input label in the admin panel
+    'input' => 'text', // input type in the admin panel
+    'frontend_class' => '', //
+    'backend' => '', // backend model
+    'frontend' => '', // frontend model
+    'source' => '', // source model
+    'default' => '', // default value
     'required' => true,
-    'user_defined' => true,
-    'default' => '',
+    'user_defined' => false, // whether users can remove an attribute from attribute sets
     'unique' => false,
+    'global' => true // attribute scope
 ]);
 $this->addAttribute('complexworld_company', 'description', [
     'type' => 'text',
