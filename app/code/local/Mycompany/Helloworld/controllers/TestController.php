@@ -19,9 +19,14 @@ class Mycompany_Helloworld_TestController extends Mage_Core_Controller_Front_Act
         if (empty($id)) {
             echo 'error: ID is invalid';
         } else {
-            $category = Mage::getModel('catalog/category')->load($id);
-            echo '<pre>';
-            print_r($category);
+//            $category = Mage::getModel('catalog/category')->load($id);
+//            echo '<pre>';
+//            print_r($category);
+
+            $this->loadLayout();
+            $this->getLayout()->getBlock('mycompany.helloworld.category')->assign('id', $id); // direct passing data
+            Mage::register('helloworld_category_id', $id); // indirect passing data (preferable)
+            $this->renderLayout();
         }
     }
 }

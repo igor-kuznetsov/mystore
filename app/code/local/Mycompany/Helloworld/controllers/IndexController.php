@@ -7,7 +7,9 @@ class Mycompany_Helloworld_IndexController extends Mage_Core_Controller_Front_Ac
 {
     public function indexAction()
     {
-        echo 'Hello World';
+        //echo 'Hello World';
+        $this->loadLayout();
+        $this->renderLayout();
     }
 
     public function paramsAction()

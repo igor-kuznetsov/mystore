@@ -30,6 +30,12 @@
                 </setup>
             </mycompanyhelloworld_setup>
         </resources>
+
+        <blocks>
+            <mycompanyhelloworld>
+                <class>Mycompany_Helloworld_Block</class>
+            </mycompanyhelloworld>
+        </blocks>
     </global>
 
     <frontend>
@@ -42,5 +48,13 @@
                 </args>
             </helloworld>
         </routers>
+
+        <layout>
+            <updates>
+                <mycompanyhelloworld>
+                    <file>mycompanyhelloworld.xml</file>
+                </mycompanyhelloworld>
+            </updates>
+        </layout>
     </frontend>
 </config>

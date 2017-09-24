@@ -1,0 +1,13 @@
+<layout version="0.1.0">
+    <helloworld_index_index>
+        <reference name="content">
+            <block type="mycompanyhelloworld/test" name="mycompany.helloworld.test" template="mycompany/helloworld/test.phtml" />
+        </reference>
+    </helloworld_index_index>
+
+    <helloworld_test_category>
+        <reference name="content">
+            <block type="mycompanyhelloworld/category" name="mycompany.helloworld.category" template="mycompany/helloworld/category.phtml" />
+        </reference>
+    </helloworld_test_category>
+</layout>
