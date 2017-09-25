@@ -10,4 +10,17 @@
             <block type="mycompanyhelloworld/category" name="mycompany.helloworld.category" template="mycompany/helloworld/category.phtml" />
         </reference>
     </helloworld_test_category>
+
+    <helloworld_test_categories>
+        <remove name="header" />
+        <remove name="right.poll" />
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/helloworld.css</stylesheet>
+            </action>
+            <action method="addJs">
+                <script>js/helloworld.js</script>
+            </action>
+        </reference>
+    </helloworld_test_categories>
 </layout>
