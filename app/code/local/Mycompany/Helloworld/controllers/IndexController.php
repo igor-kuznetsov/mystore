@@ -9,6 +9,9 @@ class Mycompany_Helloworld_IndexController extends Mage_Core_Controller_Front_Ac
     {
         //echo 'Hello World';
         $this->loadLayout();
+//        echo '<pre>';
+//        print_r($this->getLayout()->getUpdate()->getHandles());
+//        echo '</pre>';
         $this->renderLayout();
     }
 
