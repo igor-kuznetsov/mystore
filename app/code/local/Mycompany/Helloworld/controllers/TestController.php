@@ -19,10 +19,6 @@ class Mycompany_Helloworld_TestController extends Mage_Core_Controller_Front_Act
             ->createBlock('mycompanyhelloworld/categories')
             ->setTemplate('mycompany/helloworld/categories.phtml');
         $this->getLayout()->getBlock('content')->append($block);
-        // show list of all blocks on the page
-//            echo '<pre>';
-//            print_r(array_keys($this->getLayout()->getAllBlocks()));
-//            die;
         $this->renderLayout();
     }
 
@@ -44,5 +40,14 @@ class Mycompany_Helloworld_TestController extends Mage_Core_Controller_Front_Act
             Mage::register('helloworld_category_id', $id); // indirect passing data (preferable)
             $this->renderLayout();
         }
+    }
+
+    public function blocksAction()
+    {
+        $this->loadLayout();
+        // shows a list of all blocks on the page
+        echo '<pre>';
+        print_r(array_keys($this->getLayout()->getAllBlocks()));
+        die;
     }
 }

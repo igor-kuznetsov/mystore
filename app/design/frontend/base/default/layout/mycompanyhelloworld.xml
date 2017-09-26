@@ -15,11 +15,24 @@
         <remove name="header" />
         <remove name="right.poll" />
         <reference name="head">
+            <!-- http://mystore.loc/skin/frontend/base/default/css/helloworld.css -->
             <action method="addCss">
                 <stylesheet>css/helloworld.css</stylesheet>
             </action>
+            <!-- http://mystore.loc/skin/frontend/base/default/css/helloworld2.css -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/helloworld2.css</name>
+            </action>
+
+            <!-- JS LOGIC: http://mystore.loc/js/mycompany/helloworld/script1.js -->
             <action method="addJs">
-                <script>js/helloworld.js</script>
+                <script>mycompany/helloworld/script1.js</script>
+            </action>
+            <!-- JS UI: http://mystore.loc/skin/frontend/base/default/js/script2.js -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/script2.js</name>
             </action>
         </reference>
     </helloworld_test_categories>
