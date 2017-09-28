@@ -36,6 +36,12 @@
                 <class>Mycompany_Helloworld_Block</class>
             </mycompanyhelloworld>
         </blocks>
+
+        <helpers>
+            <mycompanyhelloworld>
+                <class>Mycompany_Helloworld_Helper</class>
+            </mycompanyhelloworld>
+        </helpers>
     </global>
 
     <frontend>
@@ -56,5 +62,15 @@
                 </mycompanyhelloworld>
             </updates>
         </layout>
+
+        <translate>
+            <modules>
+                <Mycompany_Helloworld>
+                    <files>
+                        <default>Mycompany_Helloworld.csv</default>
+                    </files>
+                </Mycompany_Helloworld>
+            </modules>
+        </translate>
     </frontend>
 </config>

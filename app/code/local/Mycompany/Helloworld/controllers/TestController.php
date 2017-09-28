@@ -50,4 +50,25 @@ class Mycompany_Helloworld_TestController extends Mage_Core_Controller_Front_Act
         print_r(array_keys($this->getLayout()->getAllBlocks()));
         die;
     }
+
+    public function helpersAction()
+    {
+        Mage::helper('mycompanyhelloworld/data')->myTestHelperMethod('test helper method');
+
+        Mage::helper('mycompanyhelloworld')->anotherTestHelperMethod('test helper method');
+
+        echo '<hr>';
+        echo Mage::helper('mycompanyhelloworld')->__('some string to be translated');
+
+        echo '<hr>';
+        echo Mage::helper('core')->formatCurrency(10.5);
+        echo '<br>';
+        echo Mage::helper('core')->removeTags('<h2>Some header</h2>');
+        echo '<br>';
+        $encoded_url = Mage::helper('core')->urlEncode('http://somesite.com/catelog/test?page=10&per_page=5');
+        echo $encoded_url . '<br>';
+        echo Mage::helper('core')->urlDecode($encoded_url);
+        echo '<br>';
+        echo Mage::helper('core')->formatdate('12-12-2016 20:10:05');
+    }
 }
