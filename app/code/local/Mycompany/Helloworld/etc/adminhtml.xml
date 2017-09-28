@@ -1,0 +1,41 @@
+<config>
+    <menu>
+        <mycompanymenu>
+            <title>Mycompany</title>
+            <sort_order>1</sort_order>
+            <children>
+                <helloworldmenu>
+                    <title>Helloworld</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/helloworld/index</action>
+                </helloworldmenu>
+                <blogpostsmenu>
+                    <title>Blog Posts</title>
+                    <sort_order>5</sort_order>
+                    <action>adminhtml/blogposts/index</action>
+                </blogpostsmenu>
+            </children>
+        </mycompanymenu>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <mycompanymenu>
+                        <title>Mycompany Menu Item</title>
+                        <sort_order>1</sort_order>
+                        <children>
+                            <helloworldmenu>
+                                <title>Helloworld Sub Menu Item</title>
+                            </helloworldmenu>
+                            <blogpostsmenu>
+                                <title>Blog Posts Sub Menu Item</title>
+                            </blogpostsmenu>
+                        </children>
+                    </mycompanymenu>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

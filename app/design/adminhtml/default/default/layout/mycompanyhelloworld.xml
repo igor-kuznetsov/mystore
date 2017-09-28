@@ -1,0 +1,7 @@
+<layout>
+    <adminhtml_helloworld_index>
+        <reference name="content">
+            <block type="core/template" name="mycompany.helloworld" template="mycompany/helloworld/blogposts.phtml" />
+        </reference>
+    </adminhtml_helloworld_index>
+</layout>

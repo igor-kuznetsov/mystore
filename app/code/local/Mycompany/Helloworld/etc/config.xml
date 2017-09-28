@@ -65,12 +65,34 @@
 
         <translate>
             <modules>
-                <Mycompany_Helloworld>
+                <mycompany_helloworld>
                     <files>
                         <default>Mycompany_Helloworld.csv</default>
                     </files>
-                </Mycompany_Helloworld>
+                </mycompany_helloworld>
             </modules>
         </translate>
     </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mycompany_helloworld after="Mage_Adminhtml">Mycompany_Helloworld_Adminhtml</mycompany_helloworld>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <mycompanyhelloworld>
+                    <file>mycompanyhelloworld.xml</file>
+                </mycompanyhelloworld>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>
