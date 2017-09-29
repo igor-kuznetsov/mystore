@@ -6,8 +6,8 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
     {
         parent::__construct(); // should be called first
 
-        $this->setId('mycompany_helloworld_blogposts_grid');
-        $this->setDefaultSort('blogpost_id');
+        $this->setId('mycompany_helloworld_blogposts_grid'); // HTML attribute "id"
+        $this->setDefaultSort('blogpost_id'); // DB table primary key
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true); // set ajax
@@ -18,16 +18,19 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
         $collection = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
         $this->setCollection($collection);
 
+//        parent::_prepareCollection();
+//        return $this;
         return parent::_prepareCollection();
     }
 
     protected function _prepareColumns()
     {
         $this->addColumn('blogpost_id', [
+            'type' => 'number', // grid column type, not DB field type
             'header'=> $this->__('ID'),
             'sortable' => true,
             'width' => '50',
-            'index' => 'blogpost_id'
+            'index' => 'blogpost_id' // DB table field name
         ]);
 
         $this->addColumn('title', [
@@ -46,16 +49,16 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
         $this->addColumn('timestamp', [
             'header'=> $this->__('Created'),
             'sortable' => true,
-            'index' => 'timestamp',
+            'index' => 'timestamp', // DB table field time
             'type' => 'datetime'
         ]);
 
         return parent::_prepareColumns();
     }
 
-    // ajax url
+    // ajax source url
     public function getGridUrl()
     {
-        return $this->getUrl('*/*/grid', array('_current' => true));
+        return $this->getUrl('*/*/grid', ['_current' => true]);
     }
 }

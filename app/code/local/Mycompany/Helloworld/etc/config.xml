@@ -65,11 +65,11 @@
 
         <translate>
             <modules>
-                <mycompany_helloworld>
+                <Mycompany_Helloworld>
                     <files>
                         <default>Mycompany_Helloworld.csv</default>
                     </files>
-                </mycompany_helloworld>
+                </Mycompany_Helloworld>
             </modules>
         </translate>
     </frontend>
@@ -79,7 +79,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <mycompany_helloworld after="Mage_Adminhtml">Mycompany_Helloworld_Adminhtml</mycompany_helloworld>
+                        <Mycompany_Helloworld after="Mage_Adminhtml">Mycompany_Helloworld_Adminhtml</Mycompany_Helloworld>
                     </modules>
                 </args>
             </adminhtml>

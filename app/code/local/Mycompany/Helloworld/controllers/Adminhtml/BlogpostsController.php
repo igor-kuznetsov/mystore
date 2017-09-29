@@ -8,8 +8,10 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
         $this->_title($this->__('Blog Posts'));
 
         $this->loadLayout();
-        $this->_setActiveMenu('mycompanymenu/blogpostsmenu');
+        $this->_setActiveMenu('mycompanymenu');
+
         $this->_addContent($this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts'));
+
         $this->renderLayout();
     }
 
@@ -17,8 +19,9 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
     public function gridAction()
     {
         $this->loadLayout();
-        $this->getResponse()->setBody(
-            $this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts_grid')->toHtml()
-        );
+        $renderedGridBlock = $this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts_grid')->toHtml();
+        $this->getResponse()->setBody($renderedGridBlock);
+
+        // we do not render layout!
     }
 }

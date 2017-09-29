@@ -8,7 +8,7 @@ class Mycompany_Helloworld_Adminhtml_HelloworldController extends Mage_Adminhtml
         $this->_title($this->__('Hello World'));
 
         $this->loadLayout();
-        $this->_setActiveMenu('mycompanymenu/helloworldmenu');
+        $this->_setActiveMenu('mycompanymenu');
         $this->renderLayout();
     }
 }
