@@ -4,7 +4,7 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
 {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); // should be called first
 
         $this->setId('mycompany_helloworld_blogposts_grid');
         $this->setDefaultSort('blogpost_id');
