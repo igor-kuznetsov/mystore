@@ -10,6 +10,7 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
         $this->setDefaultSort('blogpost_id');
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
+        $this->setUseAjax(true); // set ajax
     }
 
     protected function _prepareCollection()
@@ -50,5 +51,11 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
         ]);
 
         return parent::_prepareColumns();
+    }
+
+    // ajax url
+    public function getGridUrl()
+    {
+        return $this->getUrl('*/*/grid', array('_current' => true));
     }
 }

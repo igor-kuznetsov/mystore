@@ -1,15 +1,15 @@
 <config>
     <menu>
-        <mycompanymenu>
-            <title>Mycompany</title>
+        <mycompanymenu translate="title" module="mycompanyhelloworld">
+            <title>My Company</title>
             <sort_order>1</sort_order>
             <children>
-                <helloworldmenu>
-                    <title>Helloworld</title>
+                <helloworldmenu translate="title" module="mycompanyhelloworld">
+                    <title>Hello World</title>
                     <sort_order>1</sort_order>
                     <action>adminhtml/helloworld/index</action>
                 </helloworldmenu>
-                <blogpostsmenu>
+                <blogpostsmenu translate="title" module="mycompanyhelloworld">
                     <title>Blog Posts</title>
                     <sort_order>5</sort_order>
                     <action>adminhtml/blogposts/index</action>
@@ -22,14 +22,14 @@
         <resources>
             <admin>
                 <children>
-                    <mycompanymenu>
-                        <title>Mycompany Menu Item</title>
+                    <mycompanymenu translate="title" module="mycompanyhelloworld">
+                        <title>My Company Menu Item</title>
                         <sort_order>1</sort_order>
                         <children>
-                            <helloworldmenu>
-                                <title>Helloworld Sub Menu Item</title>
+                            <helloworldmenu translate="title" module="mycompanyhelloworld">
+                                <title>Hello World Sub Menu Item</title>
                             </helloworldmenu>
-                            <blogpostsmenu>
+                            <blogpostsmenu translate="title" module="mycompanyhelloworld">
                                 <title>Blog Posts Sub Menu Item</title>
                             </blogpostsmenu>
                         </children>
