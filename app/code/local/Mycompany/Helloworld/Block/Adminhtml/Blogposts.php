@@ -10,7 +10,5 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts extends Mage_Adminhtml_Bloc
         $this->_headerText = Mage::helper('mycompanyhelloworld')->__('Blog Posts'); // $this->__();
 
         parent::__construct(); // should be called after settings
-
-        $this->_removeButton('add');
     }
 }

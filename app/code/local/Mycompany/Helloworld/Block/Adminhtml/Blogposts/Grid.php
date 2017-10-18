@@ -43,7 +43,7 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
             'header'=> $this->__('Date'),
             'sortable' => true,
             'index' => 'date',
-            'type' => 'datetime'
+            'type' => 'date'
         ]);
 
         $this->addColumn('timestamp', [
@@ -60,5 +60,10 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Grid extends Mage_Adminhtml
     public function getGridUrl()
     {
         return $this->getUrl('*/*/grid', ['_current' => true]);
+    }
+
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }
 }
