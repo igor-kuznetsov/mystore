@@ -14,7 +14,7 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Edit_Tabs extends Mage_Admi
 
     protected function _beforeToHtml()
     {
-        $block = $this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts_edit_tab_form')->toHtml();
+        $block = $this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts_edit_tab_general')->toHtml();
         $this->addTab('form_section', [
             'label' => Mage::helper('mycompanyhelloworld')->__('General'),
             'title' => Mage::helper('mycompanyhelloworld')->__('General'),

@@ -1,12 +1,12 @@
 <?php
 
-class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
+class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Edit_Tab_General extends Mage_Adminhtml_Block_Widget_Form
 {
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form();
         $this->setForm($form);
-        $fieldset = $form->addFieldset('blogposts_form_general', [
+        $fieldset = $form->addFieldset('blogposts_tab_general', [
             'legend' => Mage::helper('mycompanyhelloworld')->__('General')
         ]);
 
