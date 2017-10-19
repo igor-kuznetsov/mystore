@@ -34,10 +34,8 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
             Mage::register('blogposts_data', $model);
 
             $this->loadLayout();
-
             $this->_setActiveMenu('mycompanymenu');
-
-            $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
+            $this->getLayout()->getBlock('head')->setCanLoadExtJs(true); // load ExtJs library
 
             $this->_addContent($this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts_edit'));
             $this->_addLeft($this->getLayout()->createBlock('mycompanyhelloworld/adminhtml_blogposts_edit_tabs'));
@@ -46,7 +44,7 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
         } else {
             $error = Mage::helper('mycompanyhelloworld')->__('Blog Post does not exist');
             Mage::getSingleton('adminhtml/session')->addError($error);
-            $this->_redirect('*/*/');
+            $this->_redirect('*/*/index');
         }
     }
 

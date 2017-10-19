@@ -6,6 +6,7 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Edit_Tab_General extends Ma
     {
         $form = new Varien_Data_Form();
         $this->setForm($form);
+
         $fieldset = $form->addFieldset('blogposts_tab_general', [
             'legend' => Mage::helper('mycompanyhelloworld')->__('General')
         ]);
