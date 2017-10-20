@@ -74,7 +74,7 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
 
                 $success = Mage::helper('adminhtml')->__('Blog Post was successfully saved');
                 Mage::getSingleton('adminhtml/session')->addSuccess($success);
-                Mage::getSingleton('adminhtml/session')->setBlogpostsData(false);
+                Mage::getSingleton('adminhtml/session')->setBlogpostsData(false); // delete blogpost data from session
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
                 Mage::getSingleton('adminhtml/session')->setBlogpostsData($post);
@@ -83,7 +83,7 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
             }
         }
 
-        $this->_redirect('*/*/');
+        $this->_redirect('*/*/index');
     }
 
     public function deleteAction()
@@ -104,6 +104,6 @@ class Mycompany_Helloworld_Adminhtml_BlogpostsController extends Mage_Adminhtml_
             }
         }
 
-        $this->_redirect('*/*/');
+        $this->_redirect('*/*/index');
     }
 }

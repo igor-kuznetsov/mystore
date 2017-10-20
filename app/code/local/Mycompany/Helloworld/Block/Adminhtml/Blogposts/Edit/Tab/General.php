@@ -13,34 +13,35 @@ class Mycompany_Helloworld_Block_Adminhtml_Blogposts_Edit_Tab_General extends Ma
 
         $fieldset->addField('title', 'text', [
             'label' => Mage::helper('mycompanyhelloworld')->__('Title'),
-            'class' => 'required-entry',
+            'class' => 'required-entry', // html attribute
             'required' => true,
-            'name' => 'title',
+            'name' => 'title', // html attribute
         ]);
 
         $fieldset->addField('post', 'editor', [
-            'name' => 'post',
+            'name' => 'post', // html attribute
             'label' => Mage::helper('mycompanyhelloworld')->__('Post'),
-            'title' => Mage::helper('mycompanyhelloworld')->__('Post'),
-            'style' => 'height:100px;',
+            'title' => Mage::helper('mycompanyhelloworld')->__('Post'), // html attribute
+            'style' => 'height:100px;', // html attribute
             'wysiwyg' => false,
             'required' => false
         ]);
 
         $dateFormatIso = Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT);
         $fieldset->addField('date', 'date', [
-            'name' => 'date',
+            'name' => 'date', // html attribute
             'label' => Mage::helper('mycompanyhelloworld')->__('Date'),
             'image' => $this->getSkinUrl('images/grid-cal.gif'),
             'format' => $dateFormatIso,
             'disabled' => false,
+            'required' => false,
             'time' => false,
-            'class' => 'validate-date validate-date-range date-range-custom_theme-from'
+            'class' => 'validate-date' // html attribute
         ]);
 
         if (Mage::getSingleton('adminhtml/session')->getBlogpostsData()) {
             $form->setValues(Mage::getSingleton('adminhtml/session')->getBlogpostsData());
-            Mage::getSingleton('adminhtml/session')->setBlogpostsData(null);
+            Mage::getSingleton('adminhtml/session')->setBlogpostsData(false);
         } elseif (Mage::registry('blogposts_data')) {
             $form->setValues(Mage::registry('blogposts_data')->getData());
         }
