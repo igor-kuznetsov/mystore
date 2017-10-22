@@ -5,6 +5,13 @@
  */
 class Mycompany_Helloworld_TestController extends Mage_Core_Controller_Front_Action
 {
+    public function settingsAction()
+    {
+        $config = Mage::getStoreConfig('helloworldsection/helloworldgroup1');
+        echo '<pre>';
+        print_r($config);
+    }
+
     public function categoriesAction()
     {
         // old output

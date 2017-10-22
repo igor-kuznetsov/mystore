@@ -34,6 +34,18 @@
                             </blogpostsmenu>
                         </children>
                     </mycompanymenu>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <helloworldsection translate="title" module="mycompanyhelloworld">
+                                        <title>Helloworld Settings</title>
+                                    </helloworldsection>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
                 </children>
             </admin>
         </resources>

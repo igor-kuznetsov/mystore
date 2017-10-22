@@ -1,0 +1,136 @@
+<config>
+    <tabs>
+        <mycompanytab translate="label" module="mycompanyhelloworld">
+            <label>Mycompany Modules</label>
+            <sort_order>10</sort_order>
+        </mycompanytab>
+    </tabs>
+    <sections>
+        <helloworldsection translate="label" module="mycompanyhelloworld">
+            <label>Helloworld Settings</label>
+            <tab>mycompanytab</tab>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <helloworldgroup1 translate="label comment" module="mycompanyhelloworld">
+                    <label>Helloworld Group of Settings #1</label>
+                    <comment>This is a comment about my module settings</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <helloworldtext translate="label comment">
+                            <label>My Text Field</label>
+                            <comment>My Comment for My Text Field</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </helloworldtext>
+                        <helloworldtextarea translate="label">
+                            <label>My Textarea</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </helloworldtextarea>
+                        <helloworldfile translate="label">
+                            <label>File</label>
+                            <comment><![CDATA[File saved in <strong><span style="color: red;">var/uploads</span></strong> folder.]]></comment>
+                            <frontend_type>file</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_file</backend_model>
+                            <upload_dir>var/uploads</upload_dir>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </helloworldfile>
+                        <helloworldtime translate="label">
+                            <label>Time</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </helloworldtime>
+                        <helloworldactive translate="label comment">
+                            <label>Enable/Disable</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>50</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </helloworldactive>
+                        <helloworldheading translate="label">
+                            <label>Heading example</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </helloworldheading>
+                        <helloworldboolean translate="label comment">
+                            <label>Boolean</label>
+                            <comment>Boolean with website scope and dependant fields when Yes is selected.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </helloworldboolean>
+                        <helloworlddependanttextfield translate="label comment">
+                            <label>Dependant Text Field</label>
+                            <comment>This field depends of boolean value above.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <helloworldboolean>1</helloworldboolean>
+                            </depends>
+                        </helloworlddependanttextfield>
+                    </fields>
+                </helloworldgroup1>
+
+                <helloworldgroup2 translate="label" module="mycompanyhelloworld">
+                    <label>Helloworld Group of Settings #2</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <helloworlddropdown translate="label">
+                            <label>Dropdown</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mycompanyhelloworld/system_config_select</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </helloworlddropdown>
+                        <helloworldmultipledropdown translate="label">
+                            <label>Multiselect</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>mycompanyhelloworld/system_config_multiselect</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </helloworldmultipledropdown>
+                    </fields>
+                </helloworldgroup2>
+            </groups>
+        </helloworldsection>
+    </sections>
+</config>
