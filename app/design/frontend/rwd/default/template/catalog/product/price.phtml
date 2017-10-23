@@ -65,6 +65,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
 
     <div class="price-box">
     <?php $_convertedPrice = $_store->roundPrice($_store->convertPrice($_product->getPrice())); ?>
+    <?php $_priceDiscount = $_store->roundPrice($_convertedPrice - $_convertedFinalPrice); ?>
     <?php $_price = $_taxHelper->getPrice($_product, $_convertedPrice); ?>
     <?php $_regularPrice = $_taxHelper->getPrice($_product, $_convertedPrice, $_simplePricesTax); ?>
     <?php $_finalPrice = $_taxHelper->getPrice($_product, $_convertedFinalPrice) ?>
@@ -387,7 +388,10 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
                 </p>
             <?php endif; ?>
         <?php endif; ?>
-
+        <p class="price-discount">
+            <span class="price-discount-label"><?php echo $this->__('Save'); ?></span>
+            <span class="price-discount"><?php echo $_coreHelper->formatPrice($_priceDiscount, false); ?></span>
+        </p>
     <?php endif; /* if ($_finalPrice == $_price): */ ?>
 
     <?php if ($this->getDisplayMinimalPrice() && $_minimalPriceValue && $_minimalPriceValue < $_convertedFinalPrice): ?>
