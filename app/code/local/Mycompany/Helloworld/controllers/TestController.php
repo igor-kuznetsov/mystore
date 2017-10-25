@@ -7,7 +7,9 @@ class Mycompany_Helloworld_TestController extends Mage_Core_Controller_Front_Act
 {
     public function settingsAction()
     {
-        $config = Mage::getStoreConfig('helloworldsection/helloworldgroup1');
+        $config = Mage::getStoreConfig('helloworldsection/helloworldgroup1/helloworldtext');
+//        $config = Mage::getStoreConfig('helloworldsection/helloworldgroup1');
+//        $config = Mage::getStoreConfig('helloworldsection');
         echo '<pre>';
         print_r($config);
     }

@@ -60,7 +60,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </helloworldtime>
-                        <helloworldactive translate="label comment">
+                        <helloworldactive translate="label">
                             <label>Enable/Disable</label>
                             <frontend_type>select</frontend_type>
                             <sort_order>50</sort_order>
@@ -97,6 +97,7 @@
                             <show_in_store>0</show_in_store>
                             <depends>
                                 <helloworldboolean>1</helloworldboolean>
+                                <helloworldtext>test</helloworldtext>
                             </depends>
                         </helloworlddependanttextfield>
                     </fields>
@@ -119,6 +120,7 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                         </helloworlddropdown>
+
                         <helloworldmultipledropdown translate="label">
                             <label>Multiselect</label>
                             <frontend_type>multiselect</frontend_type>
