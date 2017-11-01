@@ -9,6 +9,8 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
 //        $products->addAttributeToSelect('*');
 //        $products->addAttributeToSelect('name');
 //        $products->addAttributeToSelect('name')->addAttributeToSelect('price');
+
+//        var_dump($products->getSelect());
         echo (string) $products->getSelect();
     }
 
@@ -18,10 +20,12 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
         $products->addAttributeToSelect('name'); // still just an object
         $products->addAttributeToSelect('sku'); // still just an object
 
-        echo $products->count(); // an actual DB query has been made because we need to return real data
+//        echo $products->count(); // an actual DB query has been made because we need to return real data
 //        echo count($products);
-//        echo $products->getFirstItem();
-//        echo $products->getLastItem();
+
+//        echo $products->getFirstItem()->getName();
+//        echo $products->getLastItem()->getName();
+
 //        foreach ($products as $product) {
 //            // DB query made before collection iterates over its individual objects
 //            echo $product->getName() . "<br>";
@@ -34,7 +38,7 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
         $products->addAttributeToSelect('price');
         $products->addAttributeToSelect('sku');
 
-        $products->addFieldToFilter('sku', 'PRDCT-2');
+        $products->addFieldToFilter('sku', 'PRDCT-2'); // WHERE `sku` = 'PRDCT-2'
 
 //        $products->addFieldToFilter('sku', ['eq' => 'PRDCT-2']); // WHERE `sku` = 'PRDCT-2'
 //        $products->addFieldToFilter('sku', ['neq' => 'PRDCT-2']); // WHERE `sku` != 'PRDCT-2'
@@ -49,7 +53,7 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
 //        $products->addFieldToFilter('price', ['gteq' => 60]); // WHERE `price` >= 60
 //        $products->addFieldToFilter('price', ['lteq' => 90]); // WHERE `price` <= 90
 //        $products->addFieldToFilter('price', ['from' => 30, 'to' => 40]); // WHERE `price` >= 30 AND `price` <= 40
-
+//
         echo (string) $products->getSelect();
     }
 
