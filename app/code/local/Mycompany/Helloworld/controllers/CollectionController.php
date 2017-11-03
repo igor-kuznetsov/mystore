@@ -6,9 +6,9 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
     {
         $products = Mage::getModel('catalog/product')->getCollection();
 
-//        $products->addAttributeToSelect('*');
-//        $products->addAttributeToSelect('name');
-//        $products->addAttributeToSelect('name')->addAttributeToSelect('price');
+//        $products->addAttributeToSelect('*'); // for EAV models only
+//        $products->addAttributeToSelect('name'); // for EAV models only
+//        $products->addAttributeToSelect('name')->addAttributeToSelect('price'); // for EAV models only
 
 //        var_dump($products->getSelect());
         echo (string) $products->getSelect();
@@ -76,6 +76,7 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
     public function sortFlatAction()
     {
         $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
+
         $posts->getSelect()->order('title DESC');
         //$posts->setOrder('title', 'DESC'); // method of Varien_Data_Collection
 
@@ -107,7 +108,7 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
         $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
         $pageNum = 2;
         $pageSize = 2;
-        $posts->getSelect()->limit($pageSize, $pageSize * ($pageNum - 1));
+        $posts->getSelect()->limit($pageSize, $pageSize * ($pageNum - 1)); // limit, offset
         //$posts->setPageSize($pageSize)->setCurPage($pageNum); // methods of Varien_Data_Collection
 
         echo $posts->getSelect();
@@ -139,12 +140,15 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
     public function loadAction()
     {
         $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
+        $posts->addFieldToFilter('title', ['like' => '%test%']);
+        echo $posts->getSelect();
         $posts->load(); // load posts from DB
 
-        var_dump($posts->isLoaded()); // true
+        //var_dump($posts->isLoaded()); // true
         echo '<hr>';
 
         $posts->clear(); // clear loaded data from collection
-        var_dump($posts->isLoaded()); // false
+        echo $posts->getSelect();
+        //var_dump($posts->isLoaded()); // false
     }
 }
