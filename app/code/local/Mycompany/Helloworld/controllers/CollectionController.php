@@ -72,4 +72,79 @@ class Mycompany_Helloworld_CollectionController extends Mage_Core_Controller_Fro
 
         echo (string) $items->getSelect();
     }
+
+    public function sortFlatAction()
+    {
+        $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
+        $posts->getSelect()->order('title DESC');
+        //$posts->setOrder('title', 'DESC'); // method of Varien_Data_Collection
+
+        echo $posts->getSelect();
+        echo "<hr>";
+
+        foreach ($posts as $post) {
+            echo $post->getTitle() . "<br>";
+        }
+    }
+
+    public function sortEavAction()
+    {
+        $products = Mage::getModel('catalog/product')->getCollection();
+        $products->addAttributeToSelect('name');
+        $products->addAttributeToSort('name', 'ASC'); // for EAV only
+        //$products->setOrder('name', 'ASC');
+
+        echo $products->getSelect();
+        echo "<hr>";
+
+        foreach ($products as $product) {
+            echo $product->getName() . "<br>";
+        }
+    }
+
+    public function paginateFlatAction()
+    {
+        $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
+        $pageNum = 2;
+        $pageSize = 2;
+        $posts->getSelect()->limit($pageSize, $pageSize * ($pageNum - 1));
+        //$posts->setPageSize($pageSize)->setCurPage($pageNum); // methods of Varien_Data_Collection
+
+        echo $posts->getSelect();
+        echo "<hr>";
+
+        foreach ($posts as $post) {
+            echo $post->getTitle() . "<br>";
+        }
+    }
+
+    public function paginateEavAction()
+    {
+        $products = Mage::getModel('catalog/product')->getCollection();
+        $products->addAttributeToSelect('name');
+        $pageNum = 2;
+        $pageSize = 2;
+        $products->getSelect()->limit($pageSize, $pageSize * ($pageNum - 1));
+        //$products->setPageSize($pageSize)->setCurPage($pageNum);
+        //$products->setPage($pageNum, $pageSize); // for EAV only, alias for ->setCurPage()->setPageSize()
+
+        echo $products->getSelect();
+        echo "<hr>";
+
+        foreach ($products as $product) {
+            echo $product->getName() . "<br>";
+        }
+    }
+
+    public function loadAction()
+    {
+        $posts = Mage::getModel('mycompanyhelloworld/blogpost')->getCollection();
+        $posts->load(); // load posts from DB
+
+        var_dump($posts->isLoaded()); // true
+        echo '<hr>';
+
+        $posts->clear(); // clear loaded data from collection
+        var_dump($posts->isLoaded()); // false
+    }
 }
