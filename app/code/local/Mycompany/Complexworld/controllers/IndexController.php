@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Class Mycompany_Complexworld_IndexController
- */
 class Mycompany_Complexworld_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
