@@ -9,8 +9,8 @@ class Mycompany_Complexworld_Model_Resource_Company extends Mage_Eav_Model_Entit
         $this->setType('complexworld_company'); // eav_entity_type
 
         $this->setConnection(
-            $resource->getConnection('complexworld_read'),
-            $resource->getConnection('complexworld_write')
+            $resource->getConnection('core_read'),
+            $resource->getConnection('core_write')
         );
     }
 }

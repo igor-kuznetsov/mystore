@@ -11,7 +11,7 @@ class Mycompany_Complexworld_IndexController extends Mage_Core_Controller_Front_
     public function populateAction()
     {
         for ($i = 1; $i <= 3; $i++) {
-            $company = Mage::getModel('complexworld/eavblogpost');
+            $company = Mage::getModel('complexworld/company');
             $company->setName('Test company ' . $i);
             $company->setDescription('Test company description ' . $i);
             $company->save();
