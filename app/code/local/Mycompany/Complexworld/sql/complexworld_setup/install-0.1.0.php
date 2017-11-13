@@ -20,8 +20,9 @@ companies_text
 companies_varchar
 */
 $installer->createEntityTables(
-    $installer->getTable('complexworld/company')
+    $installer->getTable('complexworld/company') // 'companies'
 );
+
 
 // eav_attribute, eav_entity_attribute
 $installer->addAttribute('complexworld_company', 'name', [
@@ -35,7 +36,7 @@ $installer->addAttribute('complexworld_company', 'name', [
     'global' => true // attribute scope
 ]);
 
-//eav_attribute, eav_entity_attribute
+// eav_attribute, eav_entity_attribute
 $this->addAttribute('complexworld_company', 'description', [
     'type' => 'text',
     'label' => 'Description',

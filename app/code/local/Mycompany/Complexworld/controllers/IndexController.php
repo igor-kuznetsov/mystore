@@ -26,10 +26,10 @@ class Mycompany_Complexworld_IndexController extends Mage_Core_Controller_Front_
 
         $entries = $company->getCollection()
             ->addAttributeToSelect('name')
-            ->addAttributeToSelect('description');
-        $entries->load();
+            ->addAttributeToSelect('description')
+            ->load();
 
-        foreach($entries as $entry) {
+        foreach ($entries as $entry) {
             echo '<h2>' . $entry->getName() . '</h2>';
             echo '<p>' . $entry->getDescription() . '</p>';
         }
