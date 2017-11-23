@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mycompany_Overworld>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mycompany_Overworld>
+    </modules>
+</config>

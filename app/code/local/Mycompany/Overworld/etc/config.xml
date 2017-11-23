@@ -1,0 +1,65 @@
+<config>
+    <modules>
+        <Mycompany_Overworld>
+            <version>0.1.0</version>
+        </Mycompany_Overworld>
+    </modules>
+
+    <global>
+        <models>
+            <overworld>
+                <class>Mycompany_Overworld_Model</class>
+            </overworld>
+
+            <catalog>
+                <rewrite>
+                    <category>Mycompany_Overworld_Model_Category</category>
+                </rewrite>
+            </catalog>
+        </models>
+
+        <blocks>
+            <overworld>
+                <class>Mycompany_Overworld_Block</class>
+            </overworld>
+
+            <catalog>
+                <rewrite>
+                    <breadcrumbs>Mycompany_Overworld_Block_Breadcrumbs</breadcrumbs>
+                </rewrite>
+            </catalog>
+        </blocks>
+
+        <helpers>
+            <overworld>
+                <class>Mycompany_Overworld_Helper</class>
+            </overworld>
+
+            <catalog>
+                <rewrite>
+                    <category>Mycompany_Overworld_Helper_Category</category>
+                </rewrite>
+            </catalog>
+        </helpers>
+    </global>
+
+    <frontend>
+        <routers>
+            <overworld>
+                <use>standard</use>
+                <args>
+                    <module>Mycompany_Overworld</module>
+                    <frontName>overworld</frontName>
+                </args>
+            </overworld>
+
+            <catalog>
+                <args>
+                    <modules>
+                        <Mycompany_Overworld before="Mage_Catalog">Mycompany_Overworld</Mycompany_Overworld>
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+    </frontend>
+</config>
