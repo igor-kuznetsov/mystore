@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Mycompany_Observerworld>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mycompany_Observerworld>
+    </modules>
+</config>

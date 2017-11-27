@@ -1,0 +1,49 @@
+<config>
+    <modules>
+        <Mycompany_Observerworld>
+            <version>0.1.0</version>
+        </Mycompany_Observerworld>
+    </modules>
+
+    <global>
+        <models>
+            <observerworld>
+                <class>Mycompany_Observerworld_Model</class>
+            </observerworld>
+        </models>
+
+        <events>
+            <cms_page_prepare_save>
+                <observers>
+                    <Mycompany_Observerworld_Model_Observer>
+                        <type>singleton</type>
+                        <class>observerworld/observer</class>
+                        <method>savingCmsPage</method>
+                    </Mycompany_Observerworld_Model_Observer>
+                </observers>
+            </cms_page_prepare_save>
+
+            <observerworld_my_event>
+                <observers>
+                    <Mycompany_Observerworld_Model_Observer>
+                        <type>singleton</type>
+                        <class>observerworld/observer</class>
+                        <method>processingMyEvent</method>
+                    </Mycompany_Observerworld_Model_Observer>
+                </observers>
+            </observerworld_my_event>
+        </events>
+    </global>
+
+    <frontend>
+        <routers>
+            <observerworld>
+                <use>standard</use>
+                <args>
+                    <module>Mycompany_Observerworld</module>
+                    <frontName>observerworld</frontName>
+                </args>
+            </observerworld>
+        </routers>
+    </frontend>
+</config>
