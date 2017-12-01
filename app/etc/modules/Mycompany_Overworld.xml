@@ -3,6 +3,9 @@
         <Mycompany_Overworld>
             <active>true</active>
             <codePool>local</codePool>
+            <depends>
+                <Mage_Catalog />
+            </depends>
         </Mycompany_Overworld>
     </modules>
 </config>

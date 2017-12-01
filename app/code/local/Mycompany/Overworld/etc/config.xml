@@ -14,6 +14,7 @@
             <catalog>
                 <rewrite>
                     <category>Mycompany_Overworld_Model_Category</category>
+                    <observer>Mycompany_Overworld_Model_Observer</observer>
                 </rewrite>
             </catalog>
         </models>
