@@ -4,6 +4,7 @@ $installer = $this;
 
 $installer->startSetup();
 
+// add price attributes to new product type
 $fieldList = [
     'price',
     'special_price',
@@ -36,6 +37,7 @@ foreach ($fieldList as $field) {
     }
 }
 
+// add custom attributes to new product type
 $installer->addAttribute($entity_type, 'preview_video_url', [
     'type' => 'varchar',
     'label' => 'Preview Video URL',
@@ -79,15 +81,5 @@ if (in_array($product_type, $applyTo)) {
         implode(',', $applyTo)
     );
 }
-
-// remove 'weight' values for trainingvideo products if there were any created
-$attributeId = $installer->getAttributeId($entity_type, 'weight');
-$installer->run("
-    DELETE FROM {$installer->getTable('catalog_product_entity_decimal')}
-      WHERE (entity_id in (
-        SELECT entity_id FROM {$installer->getTable('catalog/product')} 
-          WHERE type_id = '{$product_type}'
-      )) and attribute_id = {$attributeId}
-");
 
 $installer->endSetup();

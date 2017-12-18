@@ -12,7 +12,9 @@
     <training_index_index>
         <update handle="customer_account" />
         <reference name="my.account.wrapper">
-            <block type="core/template" name="training.videos.content" template="mycompany/training/videos.phtml"/>
+            <block type="core/template"
+                   name="training_videos_content"
+                   template="mycompany/training/videos.phtml"/>
         </reference>
     </training_index_index>
 </layout>
