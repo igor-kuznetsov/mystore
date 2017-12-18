@@ -1,0 +1,18 @@
+<layout>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink">
+                <name>training_videos</name>
+                <path>training/index/index</path>
+                <label>Training Videos</label>
+            </action>
+        </reference>
+    </customer_account>
+
+    <training_index_index>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="training.videos.content" template="mycompany/training/videos.phtml"/>
+        </reference>
+    </training_index_index>
+</layout>

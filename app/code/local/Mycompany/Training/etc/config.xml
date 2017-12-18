@@ -1,0 +1,59 @@
+<config>
+    <modules>
+        <Mycompany_Training>
+            <version>0.1.0</version>
+        </Mycompany_Training>
+    </modules>
+
+    <global>
+        <models>
+            <training>
+                <class>Mycompany_Training_Model</class>
+            </training>
+        </models>
+
+        <resources>
+            <training_setup>
+                <setup>
+                    <module>Mycompany_Training</module>
+                    <class>Mycompany_Training_Model_Resource_Setup</class>
+                </setup>
+            </training_setup>
+        </resources>
+
+        <catalog>
+            <product>
+                <type>
+                    <trainingvideo>
+                        <label>Training Video Product</label>
+                        <model>training/product_type</model>
+                        <price_model>training/product_price</price_model>
+                        <is_qty>1</is_qty>
+                        <can_use_qty_decimals>0</can_use_qty_decimals>
+                        <composite>0</composite>
+                    </trainingvideo>
+                </type>
+            </product>
+        </catalog>
+    </global>
+
+    <frontend>
+        <routers>
+            <training>
+                <use>standard</use>
+                <args>
+                    <module>Mycompany_Training</module>
+                    <frontName>training</frontName>
+                </args>
+            </training>
+        </routers>
+
+        <layout>
+            <updates>
+                <training>
+                    <file>mycompanytraining.xml</file>
+                </training>
+            </updates>
+        </layout>
+    </frontend>
+</config>
